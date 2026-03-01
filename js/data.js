@@ -1,6 +1,6 @@
 window.WORKS = [
   {
-    id: "goldenrod-dreams",
+    id: "goldenrod-dreams-print",
     type: "print",
     title: "Goldenrod Dreams",
     price: 150,
@@ -14,7 +14,7 @@ window.WORKS = [
     shipping: "Ships in 3 to 5 business days. Tracked shipping."
   },
   {
-    id: "goldenrod-dreams",
+    id: "goldenrod-dreams-original",
     type: "original",
     title: "Goldenrod Dreams",
     price: 1800,
@@ -27,7 +27,7 @@ window.WORKS = [
     description: "Original painting. One-of-one."
 },
 {
-  id: "go-train-reflections",
+  id: "go-train-reflections-original",
   type: "original",
   title: "GO Train Reflections",
   price: 2200,
@@ -40,7 +40,7 @@ window.WORKS = [
   description: "Original painting. One-of-one."
 },
 {
-  id: "go-train-reflections",
+  id: "go-train-reflections-print",
     type: "print",
     title: "GO Train Reflections",
     price: 150,
