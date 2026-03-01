@@ -29,9 +29,9 @@ window.WORKS = [
 {
   id: "go-train-reflections",
   type: "original",
-  title: "Go Train Reflections",
+  title: "GO Train Reflections",
   price: 2200,
-  image: "assets/works/GO-train-reflections.jpg",
+  image: "assets/works/go-train-reflections.jpg",
   medium: "Oil on wood panel",
   dimensions: "36x24 in",
   year: 2023,
@@ -42,9 +42,9 @@ window.WORKS = [
 {
   id: "go-train-reflections",
     type: "print",
-    title: "Go Train Reflections",
+    title: "GO Train Reflections",
     price: 150,
-    image: "assets/works/GO-train-reflections.jpg",
+    image: "assets/works/go-train-reflections.jpg",
     medium: "Archival giclée print",
     dimensions: "36x24 in",
     year: 2023,
