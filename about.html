@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Your Name</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="index.html">Your Name</a>
+    <nav class="nav">
+      <a href="index.html">Works</a>
+      <a class="active" href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="wrap prose">
+    <h1>About</h1>
+    <p>Write a short artist bio here.</p>
+
+    <h2>Contact</h2>
+    <p>Email: you@example.com</p>
+    <p>Instagram: @yourhandle</p>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Your Name</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
