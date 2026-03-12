@@ -8,13 +8,18 @@ if (worksEl) {
   const originals = (window.WORKS || [])
   .filter(w => w.type === "original")
   .sort((a,b) => (b.year || 0) - (a.year || 0) || a.title.localeCompare(b.title));
-  worksEl.innerHTML = originals
-    .map(
-      (p) => `
+ worksEl.innerHTML = originals
+  .map(
+    (p) => `
       <article class="work-card is-original">
-        <a href="work.html?id=${encodeURIComponent(p.id)}" aria-label="${p.title}">
+
+        <a class="thumb" href="work.html?id=${encodeURIComponent(p.id)}" aria-label="${p.title}">
           <img src="${p.image}" alt="${p.title}" loading="lazy">
         </a>
+
+        <div class="popout" aria-hidden="true">
+          <img src="${p.image}" alt="${p.title}">
+        </div>
 
         <div class="meta">
           <h2>${p.title}</h2>
@@ -39,6 +44,6 @@ if (worksEl) {
         </div>
       </article>
     `
-    )
-    .join("");
+  )
+  .join("");
 }

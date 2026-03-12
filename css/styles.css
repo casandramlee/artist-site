@@ -95,16 +95,70 @@ a{color:inherit;text-decoration:none}
   font-size:.95rem;
 }
 
-/* Originals hover: show full painting on hover */
-.work-card.is-original:hover{
-  z-index: 5;
-  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+/* ===== Pop-out hover preview (Originals only) ===== */
+
+/* Let hovered card sit above neighbors */
+.work-card.is-original{
+  position:relative;
+  z-index: 0;
 }
 
-.work-card.is-original:hover img{
-  object-fit: contain;      /* shows full painting */
-  transform: scale(1.03);   /* subtle pop */
-  background: var(--bg);    /* fills letterbox area */
+/* Keep the normal thumbnail looking clean */
+.work-card.is-original .thumb{
+  position:relative;
+  overflow:hidden;                 /* clip ONLY the thumbnail area */
+}
+
+/* Make sure the image animates nicely */
+.work-card.is-original .thumb img{
+  transition: transform .18s ease;
+}
+
+/* Create a hidden popout layer */
+.work-card.is-original .popout{
+  position:absolute;
+  left: 50%;
+  top: 12px;
+  transform: translateX(-50%) scale(.98);
+  width: min(520px, 92vw);
+  height: 520px;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 6px);
+  background: var(--panel);
+  box-shadow: 0 18px 55px rgba(0,0,0,.18);
+
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .14s ease, transform .14s ease;
+}
+
+/* The popout image shows the full painting */
+.work-card.is-original .popout img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  display:block;
+  background: var(--bg);
+  border-radius: inherit;
+}
+
+/* On hover: raise card and show popout */
+.work-card.is-original:hover{
+  z-index: 10;
+}
+
+.work-card.is-original:hover .thumb img{
+  transform: scale(1.02);
+}
+
+.work-card.is-original:hover .popout{
+  opacity:1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* On small screens: disable popout (hover isn’t reliable on touch) */
+@media (max-width: 900px){
+  .work-card.is-original .popout{ display:none; }
 }
 
 /* ===== Detail page (work.html) ===== */
