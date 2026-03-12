@@ -3,11 +3,11 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const money = (n) =>
   new Intl.NumberFormat(undefined, { style: "currency", currency: "USD" }).format(n);
 
-const worksEl = document.getElementById("works");
-if (worksEl) {
-  const originals = (window.WORKS || []).filter((w) => w.type === "original");
+const el = document.getElementById("prints");
+if (el) {
+  const prints = (window.WORKS || []).filter((w) => w.type === "print");
 
-  worksEl.innerHTML = originals
+  el.innerHTML = prints
     .map(
       (p) => `
       <article class="work-card">
@@ -20,7 +20,7 @@ if (worksEl) {
           <p class="specs">${p.medium} · ${p.dimensions} · ${p.year}</p>
 
           <div class="pillrow">
-            <span class="pill">Original</span>
+            <span class="pill">Print</span>
             ${p.available ? `` : `<span class="pill sold">Sold</span>`}
           </div>
 
