@@ -96,7 +96,7 @@ a{color:inherit;text-decoration:none}
 .work-card img{
   width:100%;
   height:340px;
-  object-fit:cover;
+  object-fit:contain;
   display:block;
 }
 
@@ -142,4 +142,21 @@ a{color:inherit;text-decoration:none}
 @media (max-width: 620px){
   .works{ grid-template-columns: 1fr; }
   .work-card img{ height:360px; }
+  /* stop clipping the image */
+.work-card{ overflow: visible; }
+
+/* round the image itself a little (optional) */
+.work-card img{
+  border-radius: 0;      /* full rectangular image */
+  object-fit:contain;    /* full painting */
+  background:#fff;
+}
+
+/* keep the card “meta” panel rounded */
+.work-card .meta{
+  border:1px solid var(--line);
+  border-top:none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--panel);
+}
 }

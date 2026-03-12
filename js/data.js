@@ -186,5 +186,19 @@ window.WORKS = [
     available: true,
     checkoutUrl: "",
     description: "Original painting. One-of-one."
-  }
+  },
+  {
+    id: "plums-peaches-and-a-crossword-print",
+    type: "print",
+    title: "Plums, Peaches, and a Crossword",
+    price: 150,
+    image: "assets/works/plums-peaches-and-a-crossword.jpg",
+    medium: "Archival giclée print",
+    dimensions: "24x24 in",
+    year: 2025,
+    available: true,
+    checkoutUrl: "https://buy.stripe.com/YOUR_LINK_HERE",
+    description: "Museum-grade paper, signed on the margin.",
+    shipping: "Ships in 3 to 5 business days. Tracked shipping."
+  },
 ];

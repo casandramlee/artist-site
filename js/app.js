@@ -5,8 +5,9 @@ const money = (n) =>
 
 const worksEl = document.getElementById("works");
 if (worksEl) {
-  const originals = (window.WORKS || []).filter((w) => w.type === "original");
-
+  const originals = (window.WORKS || [])
+  .filter(w => w.type === "original")
+  .sort((a,b) => (b.year || 0) - (a.year || 0) || a.title.localeCompare(b.title));
   worksEl.innerHTML = originals
     .map(
       (p) => `
@@ -28,7 +29,7 @@ if (worksEl) {
             <a class="btn btn-ghost" href="work.html?id=${encodeURIComponent(p.id)}">View</a>
 
             ${
-              p.available && p.checkoutUrl
+              p.available === true && p.checkoutUrl
                 ? `<a class="btn" href="${p.checkoutUrl}" target="_blank" rel="noopener">Buy now</a>`
                 : `<span class="muted">${p.available ? "Contact for purchase" : "Unavailable"}</span>`
             }

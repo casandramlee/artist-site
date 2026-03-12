@@ -5,7 +5,9 @@ const money = (n) =>
 
 const el = document.getElementById("prints");
 if (el) {
-  const prints = (window.WORKS || []).filter((w) => w.type === "print");
+  const prints = (window.WORKS || [])
+  .filter(w => w.type === "print")
+  .sort((a,b) => (b.year || 0) - (a.year || 0) || a.title.localeCompare(b.title));
 
   el.innerHTML = prints
     .map(
