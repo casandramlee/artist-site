@@ -11,7 +11,7 @@ if (worksEl) {
   worksEl.innerHTML = originals
     .map(
       (p) => `
-      <article class="work-card">
+      <article class="work-card is-original">
         <a href="work.html?id=${encodeURIComponent(p.id)}" aria-label="${p.title}">
           <img src="${p.image}" alt="${p.title}" loading="lazy">
         </a>
