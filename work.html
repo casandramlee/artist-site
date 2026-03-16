@@ -25,43 +25,45 @@
   </footer>
 
   <script src="js/data.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+ <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    const money = (n) => new Intl.NumberFormat(undefined, { style:"currency", currency:"USD" }).format(n);
-    const id = new URL(location.href).searchParams.get("id");
-    const p = window.WORKS.find(x => x.id === id);
-    const el = document.getElementById("work");
+  const money = (n) => new Intl.NumberFormat(undefined, { style:"currency", currency:"USD" }).format(n);
+  const id = new URL(location.href).searchParams.get("id");
+  const p = (window.WORKS || []).find(x => x.id === id);
+  const el = document.getElementById("work");
 
-    if(!p){
-      el.innerHTML = `<p class="muted">Work not found.</p>`;
-    } else {
-      el.innerHTML = `
-        <div class="work-detail-media">
-  <img id="work-image" src="" alt="">
-</div>
-          <h1>${p.title}</h1>
-          <p class="muted">${p.medium} · ${p.dimensions} · ${p.year}</p>
-          <p>${p.description || ""}</p>
+  if(!el){
+    // nothing to render into
+  } else if(!p){
+    el.innerHTML = `<p class="muted">Work not found.</p>`;
+  } else {
+    el.innerHTML = `
+      <div class="workimg">
+        <img src="${p.image}" alt="${p.title}">
+      </div>
 
-          <div class="pillrow">
-            <span class="pill">${p.type === "original" ? "Original" : "Print"}</span>
-            ${p.available ? `` : `<span class="pill sold">Sold</span>`}
-          </div>
+      <div class="workmeta">
+        <h1>${p.title}</h1>
+        <p class="muted">${p.medium} · ${p.dimensions} · ${p.year}</p>
+        <p>${p.description || ""}</p>
 
-          <div class="buyrow">
-            <strong class="price">${money(p.price)}</strong>
-            ${
-              p.available && p.checkoutUrl
-                ? `<a class="btn" href="${p.checkoutUrl}" target="_blank" rel="noopener">Buy now</a>`
-                : `<span class="muted">${p.available ? "Contact for purchase" : "Unavailable"}</span>`
-            }
-          </div>
-
-          ${p.shipping ? `<p class="tiny muted">${p.shipping}</p>` : ``}
+        <div class="pillrow">
+          <span class="pill">${p.type === "original" ? "Original" : "Print"}</span>
+          ${p.available ? `` : `<span class="pill sold">Sold</span>`}
         </div>
-      `;
-    }
-  </script>
-</body>
-</html>
+
+        <div class="buyrow">
+          <strong class="price">${money(p.price)}</strong>
+          ${
+            p.available === true && p.checkoutUrl
+              ? `<a class="btn" href="${p.checkoutUrl}" target="_blank" rel="noopener">Buy now</a>`
+              : `<span class="muted">${p.available ? "Contact for purchase" : "Unavailable"}</span>`
+          }
+        </div>
+
+        ${p.shipping ? `<p class="tiny muted">${p.shipping}</p>` : ``}
+      </div>
+    `;
+  }
+</script>
