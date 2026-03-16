@@ -38,166 +38,181 @@ a{color:inherit;text-decoration:none}
 .footer{border-top:1px solid var(--line); padding:20px 16px; text-align:center; color:var(--muted)}
 
 /* ===== Works grid (Originals + Prints pages) ===== */
-.works{
-  display:grid;
-  gap:18px;
+/* =========================
+   Works grid
+   ========================= */
+
+.works-grid {
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
 }
 
-.work-card{
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  overflow:hidden;          /* keeps clean rounded corners */
-  background:var(--panel);
-  display:flex;
-  flex-direction:column;
+@media (max-width: 980px) {
+  .works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-.work-card img{
-  width:100%;
-  height:340px;
-  object-fit: cover;        /* fills box: no whitespace */
-  display:block;
-  transition: transform .18s ease, object-fit .18s ease;
+@media (max-width: 640px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.work-card .meta{
-  padding:14px 14px 16px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+/* =========================
+   Work card
+   ========================= */
+
+.work-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.work-card h2{
-  margin:0;
-  font-weight:600;
-  font-size:1.1rem;
-  line-height:1.25;
+.work-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #f3f1ed;
 }
 
-.work-card .specs{
-  margin:0;
-  color:var(--muted);
-  font-size:.95rem;
+.work-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* no whitespace in grid thumbnails */
 }
 
-.work-card .actions{
-  margin-top:auto;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  align-items:center;
+.work-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.work-card .price{
-  margin-left:auto;
-  color:var(--muted);
-  font-size:.95rem;
+.work-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-/* ===== Pop-out hover preview (Originals only) ===== */
-
-/* Let hovered card sit above neighbors */
-.work-card.is-original{
-  position:relative;
-  z-index: 0;
+.work-title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
 }
 
-/* Keep the normal thumbnail looking clean */
-.work-card.is-original .thumb{
-  position:relative;
-  overflow:hidden;                 /* clip ONLY the thumbnail area */
+.work-price {
+  white-space: nowrap;
 }
 
-/* Make sure the image animates nicely */
-.work-card.is-original .thumb img{
-  transition: transform .18s ease;
+.work-meta {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
-/* Create a hidden popout layer */
-.work-card.is-original .popout{
-  position:absolute;
-  left: 50%;
-  top: 12px;
-  transform: translateX(-50%) scale(.98);
-  width: min(520px, 92vw);
-  height: 520px;
-  border: 1px solid var(--line);
-  border-radius: calc(var(--radius) + 6px);
-  background: var(--panel);
-  box-shadow: 0 18px 55px rgba(0,0,0,.18);
-
-  opacity:0;
-  pointer-events:none;
-  transition: opacity .14s ease, transform .14s ease;
+.work-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* The popout image shows the full painting */
-.work-card.is-original .popout img{
-  width:100%;
-  height:100%;
-  object-fit: contain;
-  display:block;
-  background: var(--bg);
-  border-radius: inherit;
+/* =========================
+   Hover pop-out preview
+   - centered in viewport
+   - full painting visible
+   - above everything
+   - disabled on touch devices
+   ========================= */
+
+.work-popout {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  padding: 24px;
+  background: rgba(18, 18, 18, 0.42);
+  z-index: 9999;
+  pointer-events: none;
 }
 
-/* On hover: raise card and show popout */
-.work-card.is-original:hover{
-  z-index: 10;
+.work-popout-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(92vw, 1100px);
+  height: min(88vh, 900px);
+  padding: 18px;
+  background: #ece8e1; /* neutral background */
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
 }
 
-.work-card.is-original:hover .thumb img{
-  transform: scale(1.02);
+.work-popout-inner img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* full painting visible */
 }
 
-.work-card.is-original:hover .popout{
-  opacity:1;
-  transform: translateX(-50%) scale(1);
+/* only enable hover preview on true hover devices */
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover .work-popout,
+  .work-card:focus-within .work-popout {
+    display: grid;
+  }
 }
 
-/* On small screens: disable popout (hover isn’t reliable on touch) */
-@media (max-width: 900px){
-  .work-card.is-original .popout{ display:none; }
+/* explicitly disable on touch / non-hover devices */
+@media (hover: none), (pointer: coarse) {
+  .work-popout {
+    display: none !important;
+  }
 }
 
-/* ===== Detail page (work.html) ===== */
-.workview{
-  margin-top:12px;
-  display:grid;
-  gap:18px;
-  grid-template-columns: 1.15fr .85fr;
+/* =========================
+   Detail page image
+   - full painting, no crop
+   ========================= */
+
+.work-detail-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 420px;
+  padding: 24px;
+  background: #ece8e1; /* neutral background */
 }
 
-.workimg{
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  overflow:hidden;
-  background: var(--bg);
+.work-detail-media img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 80vh;
+  height: auto;
+  object-fit: contain; /* full painting visible */
 }
 
-.workimg img{
-  width:100%;
-  height:560px;
-  object-fit: contain;      /* full painting, no cropping */
-  display:block;
-  background: var(--bg);
-}
+/* optional: tighter detail layout on small screens */
+@media (max-width: 640px) {
+  .work-detail-media {
+    min-height: 300px;
+    padding: 16px;
+  }
 
-.workmeta h1{margin:0 0 8px; font-weight:600}
-.buyrow{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:14px; flex-wrap:wrap}
-.price{font-size:1.1rem}
+  .work-popout {
+    padding: 14px;
+  }
 
-/* ===== Responsive ===== */
-@media (max-width: 900px){
-  .works{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .work-card img{ height:320px; }
-
-  .workview{ grid-template-columns: 1fr; }
-  .workimg img{ height:420px; }
-}
-
-@media (max-width: 620px){
-  .works{ grid-template-columns: 1fr; }
-  .work-card img{ height:360px; }
+  .work-popout-inner {
+    padding: 12px;
+  }
 }

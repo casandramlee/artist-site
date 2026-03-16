@@ -37,8 +37,9 @@
       el.innerHTML = `<p class="muted">Work not found.</p>`;
     } else {
       el.innerHTML = `
-        <div class="workimg"><img src="${p.image}" alt="${p.title}"></div>
-        <div class="workmeta">
+        <div class="work-detail-media">
+  <img id="work-image" src="" alt="">
+</div>
           <h1>${p.title}</h1>
           <p class="muted">${p.medium} · ${p.dimensions} · ${p.year}</p>
           <p>${p.description || ""}</p>

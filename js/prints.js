@@ -11,35 +11,36 @@ if (el) {
 
   el.innerHTML = prints
     .map(
-      (p) => `
-      <article class="work-card">
-        <a href="work.html?id=${encodeURIComponent(p.id)}" aria-label="${p.title}">
-          <img src="${p.image}" alt="${p.title}" loading="lazy">
-        </a>
+     return `
+  <article class="work-card">
+    <a class="work-thumb" href="work.html?id=${work.id}" aria-label="View details for ${work.title}">
+      <img src="${work.image}" alt="${work.title}" loading="lazy">
+    </a>
 
-        <div class="meta">
-          <h2>${p.title}</h2>
-          <p class="specs">${p.medium} · ${p.dimensions} · ${p.year}</p>
+    <div class="work-popout" aria-hidden="true">
+      <div class="work-popout-inner">
+        <img src="${work.image}" alt="${work.title}">
+      </div>
+    </div>
 
-          <div class="pillrow">
-            <span class="pill">Print</span>
-            ${p.available ? `` : `<span class="pill sold">Sold</span>`}
-          </div>
+    <div class="work-card-body">
+      <div class="work-title-row">
+        <h3 class="work-title">${work.title}</h3>
+        <span class="work-price">$${work.price}</span>
+      </div>
 
-          <div class="actions">
-            <a class="btn btn-ghost" href="work.html?id=${encodeURIComponent(p.id)}">View</a>
+      <p class="work-meta">
+        ${work.year}${work.dimensions ? ` · ${work.dimensions}` : ""}
+      </p>
 
-            ${
-              p.available && p.checkoutUrl
-                ? `<a class="btn" href="${p.checkoutUrl}" target="_blank" rel="noopener">Buy now</a>`
-                : `<span class="muted">${p.available ? "Contact for purchase" : "Unavailable"}</span>`
-            }
-
-            <span class="price">${money(p.price)}</span>
-          </div>
-        </div>
-      </article>
-    `
-    )
-    .join("");
-}
+      <div class="work-actions">
+        <a href="work.html?id=${work.id}" class="btn">View Details</a>
+        ${
+          work.available && work.checkoutUrl
+            ? `<a href="${work.checkoutUrl}" class="btn btn-primary" target="_blank" rel="noopener">Buy Print</a>`
+            : `<span class="sold-out">Unavailable</span>`
+        }
+      </div>
+    </div>
+  </article>
+`;
