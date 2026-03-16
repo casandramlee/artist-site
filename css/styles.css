@@ -195,18 +195,26 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .workimg{
-  border:none;
-  border-radius:0;
-  overflow:visible;
-  background:transparent;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-/* Detail image: full painting, no crop */
 .workimg img{
-  width:100%;
-  height:auto;
-  display:block;
-  background:transparent;
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .workmeta h1{ margin:0 0 8px; font-weight:600; }
