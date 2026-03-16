@@ -11,17 +11,15 @@ if (el) {
 
   el.innerHTML = prints
     .map(
-     return `
+      work => `
   <article class="work-card">
-    <a class="work-thumb" href="work.html?id=${work.id}" aria-label="View details for ${work.title}">
-      <img src="${work.image}" alt="${work.title}" loading="lazy">
-    </a>
+    <a class="thumb" href="work.html?id=${encodeURIComponent(p.id)}" aria-label="${p.title}">
+  <img src="${p.image}" alt="${p.title}" loading="lazy">
+</a>
 
-    <div class="work-popout" aria-hidden="true">
-      <div class="work-popout-inner">
-        <img src="${work.image}" alt="${work.title}">
-      </div>
-    </div>
+<div class="popout" aria-hidden="true">
+  <img src="${p.image}" alt="${p.title}">
+</div>
 
     <div class="work-card-body">
       <div class="work-title-row">
@@ -43,4 +41,7 @@ if (el) {
       </div>
     </div>
   </article>
-`;
+`
+    )
+        .join("");
+    }
