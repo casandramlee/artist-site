@@ -18,10 +18,6 @@ if (worksEl) {
             <img src="${p.thumb}" alt="${p.title}" loading="lazy">
           </a>
 
-          <div class="popout" aria-hidden="true">
-            <img src="${p.image}" alt="${p.title}">
-          </div>
-
           <div class="meta">
             <h2>${p.title}</h2>
             <p class="specs">${p.medium} · ${p.dimensions} · ${p.year}</p>
