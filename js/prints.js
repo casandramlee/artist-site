@@ -15,12 +15,8 @@ if (el) {
       (p) => `
         <article class="work-card">
           <a class="thumb" href="work.html?id=${encodeURIComponent(p.id)}" aria-label="${p.title}">
-            <img src="${p.image}" alt="${p.title}" loading="lazy">
+            <img src="${p.thumb}" alt="${p.title}" loading="lazy">
           </a>
-
-          <div class="popout" aria-hidden="true">
-            <img src="${p.image}" alt="${p.title}">
-          </div>
 
           <div class="meta">
             <h2>${p.title}</h2>
