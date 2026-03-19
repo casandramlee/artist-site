@@ -155,7 +155,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2024,
     available: true,
-    checkoutUrl: "https://buy.stripe.com/YOUR_LINK_HERE",
+    checkoutUrl: "https://buy.stripe.com/9B68wIe2S8Oh93TgNo9fW01",
     description: "Museum-grade paper, signed on the margin.",
     shipping: "Ships in 3 to 5 business days. Tracked shipping."
   },
@@ -170,7 +170,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2024,
     available: true,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/aFa28k2ka6G94NDgNo9fW00",
     description: "Original painting. One-of-one."
   },
   {
