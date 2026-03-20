@@ -163,7 +163,7 @@ window.WORKS = [
     id: "loquats-original",
     type: "original",
     title: "Loquats",
-    price: 1100,
+    price: 960,
     thumb: "assets/works/web-thumbs/loquats.jpg",
     image: "assets/works/web-detail/loquats.jpg",
     medium: "Oil on wood panel",
