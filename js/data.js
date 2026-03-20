@@ -76,14 +76,14 @@ window.WORKS = [
     id: "go-train-reflections-original",
     type: "original",
     title: "GO Train Reflections",
-    price: 2200,
+    price: 2550,
     thumb: "assets/works/web-thumbs/go-train-reflections.jpg",
     image: "assets/works/web-detail/go-train-reflections.jpg",
     medium: "Oil on wood panel",
-    dimensions: "30x24 in",
+    dimensions: "36x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/6oUbIU0c28Oh5RH8gS9fW02",
     description: "Original painting. One-of-one."
   },
   {
@@ -112,7 +112,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/aFa9AM8Iy3tXgwl9kW9fW03",
     description: "Original painting. One-of-one."
   },
   {
@@ -167,7 +167,7 @@ window.WORKS = [
     thumb: "assets/works/web-thumbs/loquats.jpg",
     image: "assets/works/web-detail/loquats.jpg",
     medium: "Oil on wood panel",
-    dimensions: "30x24 in",
+    dimensions: "16x20 in",
     year: 2024,
     available: true,
     checkoutUrl: "https://buy.stripe.com/aFa28k2ka6G94NDgNo9fW00",
