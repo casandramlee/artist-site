@@ -193,8 +193,9 @@ a{ color:inherit; text-decoration:none; }
   .work-card .thumb img{ height:360px; }
 }
 .about-photo {
-  max-width: 320px;
-  margin: 0 0 1.5rem 0;
+  float: left;
+  width: 260px;
+  margin: 0 1.5rem 1rem 0;
 }
 
 .about-photo img {
