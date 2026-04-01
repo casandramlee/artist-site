@@ -10,7 +10,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "https://buy.stripe.com/YOUR_LINK_HERE",
+    checkoutUrl: "https://buy.stripe.com/fZufZa9MC8Oh5RH1Su9fW0c",
     description: "Museum-grade paper, signed on the margin.",
     shipping: "Ships in 3 to 5 business days. Tracked shipping."
   },
@@ -25,7 +25,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/7sY7sEf6We8Bcg5eFg9fW0d",
     description: "Original painting. One-of-one."
   },
   {
@@ -39,7 +39,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/fZu9AM9MC3tX1Br9kW9fW0a",
     description: "Original painting. One-of-one."
   },
   {
@@ -53,7 +53,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "https://buy.stripe.com/YOUR_LINK_HERE",
+    checkoutUrl: "https://buy.stripe.com/00w5kw4si9Sl6VL2Wy9fW09",
     description: "Museum-grade paper, signed on the margin.",
     shipping: "Ships in 3 to 5 business days. Tracked shipping."
   },
@@ -68,7 +68,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "https://buy.stripe.com/YOUR_LINK_HERE",
+    checkoutUrl: "https://buy.stripe.com/cNidR27Eu1lP3Jz8gS9fW0b",
     description: "Museum-grade paper, signed on the margin.",
     shipping: "Ships in 3 to 5 business days. Tracked shipping."
   },
@@ -97,7 +97,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "https://buy.stripe.com/YOUR_LINK_HERE",
+    checkoutUrl: "https://buy.stripe.com/4gMaEQ1g6e8Bcg5ap09fW0e",
     description: "Museum-grade paper, signed on the margin.",
     shipping: "Ships in 3 to 5 business days. Tracked shipping."
   },
@@ -112,7 +112,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "https://buy.stripe.com/aFa9AM8Iy3tXgwl9kW9fW03",
+    checkoutUrl: "https://buy.stripe.com/14AdR2aQG3tX5RHcx89fW0f",
     description: "Original painting. One-of-one."
   },
   {
@@ -126,7 +126,7 @@ window.WORKS = [
     dimensions: "30x24 in",
     year: 2023,
     available: true,
-    checkoutUrl: "https://buy.stripe.com/YOUR_LINK_HERE",
+    checkoutUrl: "https://buy.stripe.com/00wcMY5wm0hLcg58gS9fW05",
     description: "Museum-grade paper, signed on the margin.",
     shipping: "Ships in 3 to 5 business days. Tracked shipping."
   },
@@ -141,7 +141,7 @@ window.WORKS = [
     dimensions: "24x20 in",
     year: 2023,
     available: true,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/eVq6oAcYO6G93Jz2Wy9fW06",
     description: "Original painting. One-of-one."
   },
   {
@@ -184,7 +184,7 @@ window.WORKS = [
     dimensions: "24x24 in",
     year: 2022,
     available: true,
-    checkoutUrl: "https://buy.stripe.com/YOUR_LINK_HERE",
+    checkoutUrl: "https://buy.stripe.com/00w8wI2ka2pT1Br54G9fW07",
     description: "Museum-grade paper, signed on the margin.",
     shipping: "Ships in 3 to 5 business days. Tracked shipping."
   },
@@ -199,7 +199,7 @@ window.WORKS = [
     dimensions: "24x24 in",
     year: 2022,
     available: true,
-    checkoutUrl: "",
+    checkoutUrl: "https://buy.stripe.com/5kQ14g0c21lP93TfJk9fW08",
     description: "Original painting. One-of-one."
   },
   {
@@ -213,7 +213,7 @@ window.WORKS = [
     dimensions: "24x24 in",
     year: 2025,
     available: true,
-    checkoutUrl: "https://buy.stripe.com/YOUR_LINK_HERE",
+    checkoutUrl: "https://buy.stripe.com/fZu28k6AqaWp4ND54G9fW04",
     description: "Museum-grade paper, signed on the margin.",
     shipping: "Ships in 3 to 5 business days. Tracked shipping."
   }
